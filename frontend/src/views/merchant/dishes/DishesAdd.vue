@@ -1,5 +1,5 @@
 <template>
-  <a-modal v-model="show" title="新增家具" @cancel="onClose" :width="800">
+  <a-modal v-model="show" title="新增商品" @cancel="onClose" :width="800">
     <template slot="footer">
       <a-button key="back" @click="onClose">
         取消
@@ -11,10 +11,10 @@
     <a-form :form="form" layout="vertical">
       <a-row :gutter="20">
         <a-col :span="12">
-          <a-form-item label='家具名称' v-bind="formItemLayout">
+          <a-form-item label='商品名称' v-bind="formItemLayout">
             <a-input v-decorator="[
             'name',
-            { rules: [{ required: true, message: '请输入家具名称!' }] }
+            { rules: [{ required: true, message: '请输入商品名称!' }] }
             ]"/>
           </a-form-item>
         </a-col>
@@ -43,10 +43,10 @@
           </a-form-item>
         </a-col>
         <a-col :span="12">
-          <a-form-item label='家具状态' v-bind="formItemLayout">
+          <a-form-item label='商品状态' v-bind="formItemLayout">
             <a-select v-decorator="[
               'status',
-              { rules: [{ required: true, message: '请输入家具状态!' }] }
+              { rules: [{ required: true, message: '请输入商品状态!' }] }
               ]">
               <a-select-option value="0">下架</a-select-option>
               <a-select-option value="1">上架</a-select-option>
@@ -54,28 +54,28 @@
           </a-form-item>
         </a-col>
         <a-col :span="12">
-          <a-form-item label='家具余量' v-bind="formItemLayout">
+          <a-form-item label='商品余量' v-bind="formItemLayout">
             <a-input-number style="width: 100%" v-decorator="[
             'laveNum',
-            { rules: [{ required: true, message: '请输入家具余量!' }] }
+            { rules: [{ required: true, message: '请输入商品余量!' }] }
             ]" :min="1" :step="1"/>
           </a-form-item>
         </a-col>
         <a-col :span="12">
-          <a-form-item label='家具类型' v-bind="formItemLayout">
+          <a-form-item label='商品类型' v-bind="formItemLayout">
             <a-select style="width: 100%" v-decorator="[
             'typeId',
-            { rules: [{ required: true, message: '请输入家具类型!' }] }
+            { rules: [{ required: true, message: '请输入商品类型!' }] }
             ]">
               <a-select-option v-for="(item, index) in typeList" :value="item.id" :key="index">{{ item.name }}</a-select-option>
             </a-select>
           </a-form-item>
         </a-col>
         <a-col :span="24">
-          <a-form-item label='家具描述' v-bind="formItemLayout">
+          <a-form-item label='商品描述' v-bind="formItemLayout">
             <a-textarea :rows="6" v-decorator="[
             'content',
-             { rules: [{ required: true, message: '请输入家具描述!' }] }
+             { rules: [{ required: true, message: '请输入商品描述!' }] }
             ]"/>
           </a-form-item>
         </a-col>

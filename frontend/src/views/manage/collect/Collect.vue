@@ -15,7 +15,7 @@
             </a-col>
             <a-col :md="6" :sm="24">
               <a-form-item
-                label="家具类型"
+                label="商品类型"
                 :labelCol="{span: 4}"
                 :wrapperCol="{span: 18, offset: 2}">
                 <a-input v-model="queryParams.typeName"/>
@@ -23,7 +23,7 @@
             </a-col>
             <a-col :md="6" :sm="24">
               <a-form-item
-                label="家具名称"
+                label="商品名称"
                 :labelCol="{span: 4}"
                 :wrapperCol="{span: 18, offset: 2}">
                 <a-input v-model="queryParams.firnitureName"/>
@@ -145,11 +145,11 @@ export default {
           </a-popover>
         }
       }, {
-        title: '家具名称',
+        title: '商品名称',
         dataIndex: 'firnitureName',
         ellipsis: true
       }, {
-        title: '家具类型',
+        title: '商品类型',
         dataIndex: 'typeName',
         customRender: (text, row, index) => {
           if (text !== null) {
@@ -171,7 +171,7 @@ export default {
         },
         ellipsis: true
       }, {
-        title: '家具图片',
+        title: '商品图片',
         dataIndex: 'firnitureImages',
         customRender: (text, record, index) => {
           if (!record.firnitureImages) return <a-avatar shape="square" icon="user" />

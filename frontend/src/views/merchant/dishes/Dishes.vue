@@ -7,7 +7,7 @@
           <div :class="advanced ? null: 'fold'">
             <a-col :md="6" :sm="24">
               <a-form-item
-                label="家具编号"
+                label="商品编号"
                 :labelCol="{span: 5}"
                 :wrapperCol="{span: 18, offset: 1}">
                 <a-input v-model="queryParams.code"/>
@@ -15,7 +15,7 @@
             </a-col>
             <a-col :md="6" :sm="24">
               <a-form-item
-                label="家具名称"
+                label="商品名称"
                 :labelCol="{span: 5}"
                 :wrapperCol="{span: 18, offset: 1}">
                 <a-input v-model="queryParams.name"/>
@@ -127,15 +127,15 @@ export default {
     }),
     columns () {
       return [{
-        title: '家具编号',
+        title: '商品编号',
         dataIndex: 'code',
         ellipsis: true
       }, {
-        title: '家具名称',
+        title: '商品名称',
         dataIndex: 'name',
         ellipsis: true
       }, {
-        title: '家具图片',
+        title: '商品图片',
         dataIndex: 'images',
         customRender: (text, record, index) => {
           if (!record.images) return <a-avatar shape="square" icon="user" />
@@ -267,7 +267,7 @@ export default {
     },
     handledishesAddSuccess () {
       this.dishesAdd.visiable = false
-      this.$message.success('新增家具成功')
+      this.$message.success('新增商品成功')
       this.search()
     },
     edit (record) {
@@ -279,7 +279,7 @@ export default {
     },
     handledishesEditSuccess () {
       this.dishesEdit.visiable = false
-      this.$message.success('修改家具成功')
+      this.$message.success('修改商品成功')
       this.search()
     },
     handleDeptChange (value) {
