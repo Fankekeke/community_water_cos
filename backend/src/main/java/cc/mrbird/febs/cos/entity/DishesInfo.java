@@ -12,7 +12,7 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 /**
- * 家具管理
+ * 商品管理
  *
  * @author FanK
  */
@@ -30,17 +30,17 @@ public class DishesInfo implements Serializable {
     private Integer id;
 
     /**
-     * 家具编号
+     * 商品编号
      */
     private String code;
 
     /**
-     * 家具名称
+     * 商品名称
      */
     private String name;
 
     /**
-     * 家具描述
+     * 商品描述
      */
     private String content;
 
@@ -110,7 +110,7 @@ public class DishesInfo implements Serializable {
     private Integer laveNum;
 
     /**
-     * 家具类型
+     * 商品类型
      */
     private Integer typeId;
 

@@ -31,10 +31,10 @@ public class DishesInfoController {
     private final IMerchantInfoService merchantInfoService;
 
     /**
-     * 分页获取家具信息
+     * 分页获取商品信息
      *
      * @param page       分页对象
-     * @param dishesInfo 家具信息
+     * @param dishesInfo 商品信息
      * @return 结果
      */
     @GetMapping("/page")
@@ -43,7 +43,7 @@ public class DishesInfoController {
     }
 
     /**
-     * 根据商家获取家具信息
+     * 根据商家获取商品信息
      *
      * @param merchantUserId 商家ID
      * @return 结果
@@ -59,7 +59,7 @@ public class DishesInfoController {
     }
 
     /**
-     * 获取ID获取家具详情
+     * 获取ID获取商品详情
      *
      * @param id 主键
      * @return 结果
@@ -70,7 +70,7 @@ public class DishesInfoController {
     }
 
     /**
-     * 获取家具信息列表
+     * 获取商品信息列表
      *
      * @return 结果
      */
@@ -80,9 +80,9 @@ public class DishesInfoController {
     }
 
     /**
-     * 新增家具信息
+     * 新增商品信息
      *
-     * @param dishesInfo 家具信息
+     * @param dishesInfo 商品信息
      * @return 结果
      */
     @PostMapping
@@ -98,9 +98,9 @@ public class DishesInfoController {
     }
 
     /**
-     * 修改家具信息
+     * 修改商品信息
      *
-     * @param dishesInfo 家具信息
+     * @param dishesInfo 商品信息
      * @return 结果
      */
     @PutMapping
@@ -109,10 +109,10 @@ public class DishesInfoController {
     }
 
     /**
-     * 删除家具信息
+     * 删除商品信息
      *
      * @param ids ids
-     * @return 家具信息
+     * @return 商品信息
      */
     @DeleteMapping("/{ids}")
     public R deleteByIds(@PathVariable("ids") List<Integer> ids) {

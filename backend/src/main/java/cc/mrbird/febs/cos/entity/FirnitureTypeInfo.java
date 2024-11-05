@@ -10,7 +10,7 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 /**
- * 家具类型
+ * 商品类型
  *
  * @author FanK
  */

@@ -34,7 +34,7 @@ public class CollectInfo implements Serializable {
     private Integer userId;
 
     /**
-     * 家具ID
+     * 商品ID
      */
     private Integer furnitureId;
 

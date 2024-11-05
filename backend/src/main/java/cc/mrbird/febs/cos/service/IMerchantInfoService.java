@@ -27,7 +27,7 @@ public interface IMerchantInfoService extends IService<MerchantInfo> {
      * 根据商家获取订单评价信息
      *
      * @param merchantId 商家ID
-     * @param dishesId   家具ID
+     * @param dishesId   商品ID
      * @return 结果
      */
     List<LinkedHashMap<String, Object>> selectEvaluateByMerchant(Integer merchantId, Integer dishesId);

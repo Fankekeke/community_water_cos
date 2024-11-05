@@ -24,10 +24,10 @@ public class FirnitureTypeInfoController {
     private final IFirnitureTypeInfoService firnitureTypeInfoService;
 
     /**
-     * 分页获取家具类型信息
+     * 分页获取商品类型信息
      *
      * @param page              分页对象
-     * @param firnitureTypeInfo 家具类型信息
+     * @param firnitureTypeInfo 商品类型信息
      * @return 结果
      */
     @GetMapping("/page")
@@ -36,7 +36,7 @@ public class FirnitureTypeInfoController {
     }
 
     /**
-     * 获取ID获取家具类型详情
+     * 获取ID获取商品类型详情
      *
      * @param id 主键
      * @return 结果
@@ -47,7 +47,7 @@ public class FirnitureTypeInfoController {
     }
 
     /**
-     * 获取家具类型信息列表
+     * 获取商品类型信息列表
      *
      * @return 结果
      */
@@ -57,9 +57,9 @@ public class FirnitureTypeInfoController {
     }
 
     /**
-     * 新增家具类型信息
+     * 新增商品类型信息
      *
-     * @param firnitureTypeInfo 家具类型信息
+     * @param firnitureTypeInfo 商品类型信息
      * @return 结果
      */
     @PostMapping
@@ -70,9 +70,9 @@ public class FirnitureTypeInfoController {
     }
 
     /**
-     * 修改家具类型信息
+     * 修改商品类型信息
      *
-     * @param firnitureTypeInfo 家具类型信息
+     * @param firnitureTypeInfo 商品类型信息
      * @return 结果
      */
     @PutMapping
@@ -81,10 +81,10 @@ public class FirnitureTypeInfoController {
     }
 
     /**
-     * 删除家具类型信息
+     * 删除商品类型信息
      *
      * @param ids ids
-     * @return 家具类型信息
+     * @return 商品类型信息
      */
     @DeleteMapping("/{ids}")
     public R deleteByIds(@PathVariable("ids") List<Integer> ids) {
