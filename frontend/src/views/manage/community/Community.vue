@@ -7,7 +7,7 @@
           <div :class="advanced ? null: 'fold'">
             <a-col :md="6" :sm="24">
               <a-form-item
-                label="商家编号"
+                label="社区编号"
                 :labelCol="{span: 5}"
                 :wrapperCol="{span: 18, offset: 1}">
                 <a-input v-model="queryParams.code"/>
@@ -15,7 +15,7 @@
             </a-col>
             <a-col :md="6" :sm="24">
               <a-form-item
-                label="商家名称"
+                label="社区名称"
                 :labelCol="{span: 5}"
                 :wrapperCol="{span: 18, offset: 1}">
                 <a-input v-model="queryParams.name"/>
@@ -23,10 +23,10 @@
             </a-col>
             <a-col :md="6" :sm="24">
               <a-form-item
-                label="负责人"
+                label="社区地址"
                 :labelCol="{span: 5}"
                 :wrapperCol="{span: 18, offset: 1}">
-                <a-input v-model="queryParams.principal"/>
+                <a-input v-model="queryParams.address"/>
               </a-form-item>
             </a-col>
           </div>
@@ -39,7 +39,7 @@
     </div>
     <div>
       <div class="operator">
-<!--        <a-button type="primary" ghost @click="add">新增</a-button>-->
+        <a-button type="primary" ghost @click="add">新增</a-button>
         <a-button @click="batchDelete">删除</a-button>
       </div>
       <!-- 表格区域 -->
@@ -82,9 +82,9 @@
 
 <script>
 import RangeDate from '@/components/datetime/RangeDate'
-import merchantAdd from './MerchantAdd'
-import merchantEdit from './MerchantEdit'
-import merchantView from './MerchantView.vue'
+import merchantAdd from './CommunityAdd.vue'
+import merchantEdit from './CommunityEdit.vue'
+import merchantView from './CommunityView.vue'
 import {mapState} from 'vuex'
 import moment from 'moment'
 moment.locale('zh-cn')
@@ -129,15 +129,15 @@ export default {
     }),
     columns () {
       return [{
-        title: '商家编号',
+        title: '社区编号',
         dataIndex: 'code',
         ellipsis: true
       }, {
-        title: '商家名称',
+        title: '社区名称',
         dataIndex: 'name',
         ellipsis: true
       }, {
-        title: '商家图片',
+        title: '社区图片',
         dataIndex: 'images',
         customRender: (text, record, index) => {
           if (!record.images) return <a-avatar shape="square" icon="user" />
@@ -147,19 +147,6 @@ export default {
             </template>
             <a-avatar shape="square" icon="user" src={ 'http://127.0.0.1:9527/imagesWeb/' + record.images.split(',')[0] } />
           </a-popover>
-        }
-      }, {
-        title: '状态',
-        dataIndex: 'status',
-        customRender: (text, row, index) => {
-          switch (text) {
-            case '0':
-              return <a-tag color="red">休业</a-tag>
-            case '1':
-              return <a-tag color="green">营业</a-tag>
-            default:
-              return '- -'
-          }
         }
       }, {
         title: '具体地址',
@@ -173,8 +160,8 @@ export default {
         },
         ellipsis: true
       }, {
-        title: '负责人',
-        dataIndex: 'principal',
+        title: '经度',
+        dataIndex: 'longitude',
         customRender: (text, row, index) => {
           if (text !== null) {
             return text
@@ -184,8 +171,8 @@ export default {
         },
         ellipsis: true
       }, {
-        title: '联系方式',
-        dataIndex: 'phone',
+        title: '纬度',
+        dataIndex: 'latitude',
         customRender: (text, row, index) => {
           if (text !== null) {
             return text
@@ -217,7 +204,7 @@ export default {
   },
   methods: {
     audit (id, status) {
-      this.$get('/cos/merchant-info/audit', {merchantId: id, status}).then((r) => {
+      this.$get('/cos/community-info/audit', {merchantId: id, status}).then((r) => {
         this.$message.success('修改成功')
         this.search()
       })
@@ -243,7 +230,7 @@ export default {
     },
     handlemerchantAddSuccess () {
       this.merchantAdd.visiable = false
-      this.$message.success('新增商家成功')
+      this.$message.success('新增社区成功')
       this.search()
     },
     edit (record) {
@@ -255,7 +242,7 @@ export default {
     },
     handlemerchantEditSuccess () {
       this.merchantEdit.visiable = false
-      this.$message.success('修改商家成功')
+      this.$message.success('修改社区成功')
       this.search()
     },
     handleDeptChange (value) {
@@ -273,7 +260,7 @@ export default {
         centered: true,
         onOk () {
           let ids = that.selectedRowKeys.join(',')
-          that.$delete('/cos/merchant-info/' + ids).then(() => {
+          that.$delete('/cos/community-info/' + ids).then(() => {
             that.$message.success('删除成功')
             that.selectedRowKeys = []
             that.search()
@@ -343,7 +330,7 @@ export default {
         params.size = this.pagination.defaultPageSize
         params.current = this.pagination.defaultCurrent
       }
-      this.$get('/cos/merchant-info/page', {
+      this.$get('/cos/community-info/page', {
         ...params
       }).then((r) => {
         let data = r.data.data
