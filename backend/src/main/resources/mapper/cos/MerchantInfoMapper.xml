@@ -20,6 +20,7 @@
             status,
             dishes,
             longitude,
+            community_id,
             latitude
         from
             merchant_info
