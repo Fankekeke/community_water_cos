@@ -65,6 +65,7 @@ public class CommunityInfoController {
     @PostMapping
     public R save(CommunityInfo communityInfo) {
         communityInfo.setCreateDate(DateUtil.formatDateTime(new Date()));
+        communityInfo.setCode("CU-" + System.currentTimeMillis());
         return R.ok(communityInfoService.save(communityInfo));
     }
 

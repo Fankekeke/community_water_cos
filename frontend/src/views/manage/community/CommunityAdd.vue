@@ -19,7 +19,7 @@
           </a-form-item>
         </a-col>
         <a-col :span="12">
-          <a-form-item label='店铺地址'>
+          <a-form-item label='社区地址'>
             <a-input-search
               v-decorator="[
               'address'
