@@ -70,6 +70,7 @@ fank
 | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104563023.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104289710.png) |
 | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104549613.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104207895.png) |
 | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104531699.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104191144.png) |
+| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/work/936e9baf53eb9a217af4f89c616dc19.png) |
 
 #### 演示视频
 
