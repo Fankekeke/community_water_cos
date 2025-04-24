@@ -21,6 +21,7 @@
             dishes,
             longitude,
             community_id,
+            distanceThreshold,
             latitude
         from
             merchant_info

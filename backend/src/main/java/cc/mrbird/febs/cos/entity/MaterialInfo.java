@@ -59,6 +59,4 @@ public class MaterialInfo implements Serializable {
      * 销量
      */
     private Integer saleNum;
-
-
 }
