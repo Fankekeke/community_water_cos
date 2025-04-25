@@ -418,7 +418,11 @@ export default {
         addressId: this.addressId,
         orderItemListStr: JSON.stringify(this.checkList)
       }).then((r) => {
-        this.orderAddInfo = r.data.data
+        if (r.data.data.distanceThreshold != 0 && r.data.data.distanceThreshold < r.data.data.kilometre) {
+          this.$message.warn('商家最大配送距离为' + r.data.data.distanceThreshold + '千米，' + '当前所选地址距离为' + r.data.data.kilometre + '千米，请重新选择地址')
+        } else {
+          this.orderAddInfo = r.data.data
+        }
       })
     },
     handleChange (value) {

@@ -199,7 +199,7 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoMapper, OrderInfo
             AddressInfo addressInfo = addressInfoService.getById(orderInfo.getAddressId());
             // 获取商家地址
             MerchantInfo merchantInfo = merchantInfoService.getById(orderInfo.getMerchantId());
-
+            orderInfo.setDistanceThreshold(merchantInfo.getDistanceThreshold());
             // 计算公里数与配送费用
             double distance = LocationUtils.getDistance(merchantInfo.getLongitude().doubleValue(), merchantInfo.getLatitude().doubleValue(), addressInfo.getLongitude().doubleValue(), addressInfo.getLatitude().doubleValue());
             orderInfo.setKilometre(NumberUtil.round(NumberUtil.div(new BigDecimal(distance), 1000), 2));
