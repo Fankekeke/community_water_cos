@@ -62,6 +62,14 @@
           </a-form-item>
         </a-col>
         <a-col :span="24">
+          <a-form-item label='配送距离阈值（不限制距离请填写-1）/KM' v-bind="formItemLayout">
+            <a-input-number style="width: 100%" v-decorator="[
+            'distanceThreshold',
+            { rules: [{ required: true, message: '请输入配送距离阈值!' }] }
+            ]" :min="1" :step="1"/>
+          </a-form-item>
+        </a-col>
+        <a-col :span="24">
           <a-form-item label='营业星期' v-bind="formItemLayout">
             <div :style="{ borderBottom: '1px solid #E9E9E9' }">
               <a-checkbox :indeterminate="indeterminate" :checked="checkAll" @change="onCheckAllChange">

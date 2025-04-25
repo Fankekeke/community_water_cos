@@ -183,7 +183,7 @@
           <a-button style="margin-right: .8rem">取消</a-button>
         </a-popconfirm>
         <a-button @click="next" type="primary" v-if="nextFlag == 1">下一步</a-button>
-        <a-button @click="orderPay" type="primary" v-if="nextFlag == 2">支付</a-button>
+        <a-button @click="orderPay" type="primary" v-if="nextFlag == 2 && distanceFlag">支付</a-button>
       </div>
     </div>
   </a-drawer>
@@ -285,6 +285,7 @@ export default {
   },
   data () {
     return {
+      distanceFlag: false,
       childrenDrawer: false,
       orderAddInfo: null,
       addressId: null,
@@ -359,6 +360,9 @@ export default {
           baiduMap.initMap('areas')
           this.getLocal()
         }, 200)
+        this.addressId = null
+      } else {
+        this.distanceFlag = true
       }
     }
   },
@@ -420,8 +424,10 @@ export default {
       }).then((r) => {
         if (r.data.data.distanceThreshold != 0 && r.data.data.distanceThreshold < r.data.data.kilometre) {
           this.$message.warn('商家最大配送距离为' + r.data.data.distanceThreshold + '千米，' + '当前所选地址距离为' + r.data.data.kilometre + '千米，请重新选择地址')
+          this.distanceFlag = false
         } else {
           this.orderAddInfo = r.data.data
+          this.distanceFlag = true
         }
       })
     },
