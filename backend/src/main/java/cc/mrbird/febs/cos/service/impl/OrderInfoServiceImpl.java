@@ -57,6 +57,8 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoMapper, OrderInfo
 
     private final IMailService mailService;
 
+    private final IStaffLocalRecordService staffLocalRecordService;
+
 
     /**
      * 分页获取订单信息
@@ -68,6 +70,17 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoMapper, OrderInfo
     @Override
     public IPage<LinkedHashMap<String, Object>> selectOrderPage(Page<OrderInfo> page, OrderInfo orderInfo) {
         return baseMapper.selectOrderPage(page, orderInfo);
+    }
+
+    /**
+     * 查询订单信息
+     *
+     * @param staffId 员工ID
+     * @return 结果
+     */
+    @Override
+    public List<LinkedHashMap<String, Object>> queryOrderByStaff(Integer staffId) {
+        return baseMapper.queryOrderByStaff(staffId);
     }
 
     /**
@@ -287,6 +300,7 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoMapper, OrderInfo
                 put("orderItem", Collections.emptyList());
                 put("address", null);
                 put("staff", null);
+                put("staffLocal", null);
                 put("evaluate", null);
             }
         };
@@ -333,6 +347,8 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoMapper, OrderInfo
             if (orderInfo.getStaffId() != null) {
                 StaffInfo staffInfo = staffInfoService.getById(orderInfo.getStaffId());
                 result.put("staff", staffInfo);
+                StaffLocalRecord staffLocalRecord = staffLocalRecordService.getOne(Wrappers.<StaffLocalRecord>lambdaQuery().eq(StaffLocalRecord::getStaffId, orderInfo.getStaffId()));
+                result.put("staffLocal", staffLocalRecord);
             }
         }
         return result;

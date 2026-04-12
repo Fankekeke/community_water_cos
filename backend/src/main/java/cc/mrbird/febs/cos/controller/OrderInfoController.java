@@ -4,7 +4,9 @@ package cc.mrbird.febs.cos.controller;
 import cc.mrbird.febs.common.exception.FebsException;
 import cc.mrbird.febs.common.utils.R;
 import cc.mrbird.febs.cos.entity.OrderInfo;
+import cc.mrbird.febs.cos.entity.StaffInfo;
 import cc.mrbird.febs.cos.service.IOrderInfoService;
+import cc.mrbird.febs.cos.service.IStaffInfoService;
 import cn.hutool.core.date.DateUtil;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -25,6 +27,8 @@ public class OrderInfoController {
 
     private final IOrderInfoService orderInfoService;
 
+    private final IStaffInfoService staffInfoService;
+
     /**
      * 分页获取订单信息
      *
@@ -35,6 +39,18 @@ public class OrderInfoController {
     @GetMapping("/page")
     public R page(Page<OrderInfo> page, OrderInfo orderInfo) {
         return R.ok(orderInfoService.selectOrderPage(page, orderInfo));
+    }
+
+    /**
+     * 查询员工订单信息
+     *
+     * @param staffId 员工ID
+     * @return 订单信息
+     */
+    @GetMapping("/queryOrderByStaff")
+    public R queryOrderByStaff(Integer staffId) {
+        StaffInfo staffInfo = staffInfoService.getOne(Wrappers.<StaffInfo>lambdaQuery().eq(StaffInfo::getUserId, staffId));
+        return R.ok(orderInfoService.queryOrderByStaff(staffInfo.getId()));
     }
 
     /**

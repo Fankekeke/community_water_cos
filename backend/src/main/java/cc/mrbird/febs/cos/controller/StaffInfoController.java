@@ -6,6 +6,9 @@ import cc.mrbird.febs.cos.entity.MerchantInfo;
 import cc.mrbird.febs.cos.entity.StaffInfo;
 import cc.mrbird.febs.cos.service.IMerchantInfoService;
 import cc.mrbird.febs.cos.service.IStaffInfoService;
+import cc.mrbird.febs.cos.service.IStaffLocalRecordService;
+import cc.mrbird.febs.system.domain.User;
+import cc.mrbird.febs.system.service.UserService;
 import cn.hutool.core.date.DateUtil;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -28,6 +31,8 @@ public class StaffInfoController {
     private final IStaffInfoService staffInfoService;
 
     private final IMerchantInfoService merchantInfoService;
+
+    private final UserService userService;
 
     /**
      * 分页获取员工信息
@@ -63,21 +68,35 @@ public class StaffInfoController {
     }
 
     /**
+     * 根据用户ID查询员工信息
+     *
+     * @param userId 用户ID
+     * @return 结果
+     */
+    @GetMapping("/queryStaffByUserId")
+    public R queryStaffByUserId(Integer userId) {
+        StaffInfo staffInfo = staffInfoService.getOne(Wrappers.<StaffInfo>lambdaQuery().eq(StaffInfo::getUserId, userId));
+        return R.ok(staffInfo);
+    }
+
+    /**
      * 新增员工信息
      *
      * @param staffInfo 员工信息
      * @return 结果
      */
     @PostMapping
-    public R save(StaffInfo staffInfo) {
+    public R save(StaffInfo staffInfo) throws Exception {
         // 获取所属商家
         MerchantInfo merchantInfo = merchantInfoService.getOne(Wrappers.<MerchantInfo>lambdaQuery().eq(MerchantInfo::getUserId, staffInfo.getCanteenId()));
         if (merchantInfo != null) {
             staffInfo.setCanteenId(merchantInfo.getId());
         }
         staffInfo.setCreateDate(DateUtil.formatDateTime(new Date()));
+        staffInfo.setStatus(1);
         staffInfo.setCode("STF-" + System.currentTimeMillis());
-        return R.ok(staffInfoService.save(staffInfo));
+        userService.registStaff(staffInfo.getCode(), "1234qwer", staffInfo);
+        return R.ok(true);
     }
 
     /**
@@ -103,7 +122,17 @@ public class StaffInfoController {
      * @return 结果
      */
     @PutMapping
-    public R edit(StaffInfo staffInfo) {
+    public R edit(StaffInfo staffInfo) throws Exception {
+        StaffInfo staffInfo1 = staffInfoService.getById(staffInfo.getId());
+        if (staffInfo1.getUserId() != null && staffInfo.getStatus() != null) {
+            User user = userService.getById(staffInfo1.getUserId());
+            if (staffInfo.getStatus() == 1) {
+                user.setStatus("1");
+            } else {
+                user.setStatus("0");
+            }
+            this.userService.updateProfile(user);
+        }
         return R.ok(staffInfoService.updateById(staffInfo));
     }
 

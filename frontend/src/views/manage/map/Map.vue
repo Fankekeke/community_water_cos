@@ -8,7 +8,7 @@
     wrapClassName="aa"
     :getContainer="false"
   >
-    <div style="width: 100%">
+    <div style="width: 100%" v-if="orderShow">
       <a-icon type="arrow-left" style="position: absolute;z-index: 999;color: red;font-size: 20px;margin: 15px" @click="home"/>
       <a-row style="height:100vh;font-family: SimHei">
         <a-col :span="15" style="height: 100%;">
@@ -227,6 +227,7 @@ export default {
       orderItemInfo: [],
       addressInfo: null,
       staffInfo: null,
+      staffLocal: null,
       evaluateInfo: null,
       staffList: [],
       communityRent: 0,
@@ -318,10 +319,14 @@ export default {
         this.addressInfo = r.data.address
         this.staffInfo = r.data.staff
         this.evaluateInfo = r.data.evaluate
+        this.staffLocal = r.data.staffLocal
         setTimeout(() => {
           baiduMap.initMap('areas')
           this.getLocal()
           this.navigation(this.addressInfo, this.merchantInfo)
+          if (this.staffLocal) {
+            this.addStaffMarker()
+          }
         }, 200)
       })
     },
@@ -333,6 +338,66 @@ export default {
       // eslint-disable-next-line no-undef
       driving.search(new BMap.Point(merchant.longitude, merchant.latitude), new BMap.Point(address.longitude, address.latitude))
       // this.getRoadData()
+    },
+    addStaffMarker () {
+      if (!this.staffLocal || !this.staffLocal.lng || !this.staffLocal.lat || this.orderInfo.status != '2') {
+        return
+      }
+
+      const point = new BMap.Point(this.staffLocal.lng, this.staffLocal.lat)
+
+      const icon = new BMap.Icon(
+        'http://api.map.baidu.com/img/markers.png',
+        new BMap.Size(23, 25),
+        {
+          offset: new BMap.Size(10, 25),
+          imageOffset: new BMap.Size(0, 0 - 10 * 25)
+        }
+      )
+
+      const marker = new BMap.Marker(point, { icon })
+
+      const label = new BMap.Label(`配送员: ${this.staffInfo ? this.staffInfo.name : '未知'}`, {
+        offset: new BMap.Size(20, -10)
+      })
+      label.setStyle({
+        color: '#fff',
+        backgroundColor: '#ff6600',
+        border: '1px solid #ff6600',
+        borderRadius: '4px',
+        padding: '4px 8px',
+        fontSize: '12px',
+        fontWeight: 'bold'
+      })
+      marker.setLabel(label)
+
+      const infoWindow = new BMap.InfoWindow(`
+        <div style="padding: 10px; min-width: 200px;">
+          <h4 style="margin: 0 0 10px 0; color: #ff6600;">配送员当前位置</h4>
+          <p style="margin: 5px 0;"><strong>姓名：</strong>${this.staffInfo ? this.staffInfo.name : '未知'}</p>
+          <p style="margin: 5px 0;"><strong>工号：</strong>${this.staffInfo ? this.staffInfo.code : '未知'}</p>
+          <p style="margin: 5px 0;"><strong>经度：</strong>${this.staffLocal.lng}</p>
+          <p style="margin: 5px 0;"><strong>纬度：</strong>${this.staffLocal.lat}</p>
+          <p style="margin: 5px 0;"><strong>更新时间：</strong>${this.staffLocal.createDate || '未知'}</p>
+        </div>
+      `)
+
+      marker.addEventListener('click', () => {
+        baiduMap.rMap().openInfoWindow(infoWindow, point)
+      })
+
+      baiduMap.rMap().addOverlay(marker)
+
+      const staffPointIcon = new BMap.Icon(
+        'http://api.map.baidu.com/img/markers.png',
+        new BMap.Size(23, 25),
+        {
+          offset: new BMap.Size(10, 25),
+          imageOffset: new BMap.Size(0, -25)
+        }
+      )
+      const staffPointMarker = new BMap.Marker(point, { icon: staffPointIcon })
+      baiduMap.rMap().addOverlay(staffPointMarker)
     },
     getRoadData () {
       let options = {

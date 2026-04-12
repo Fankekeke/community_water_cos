@@ -29,21 +29,6 @@
             </a-select>
           </a-form-item>
         </a-col>
-        <a-col :span="12">
-          <a-form-item label='在职状态' v-bind="formItemLayout">
-            <a-radio-group button-style="solid" v-decorator="[
-              'status',
-              { rules: [{ required: true, message: '请输入在职状态!' }] }
-              ]">
-              <a-radio-button value="1">
-                在职
-              </a-radio-button>
-              <a-radio-button value="2">
-                离职
-              </a-radio-button>
-            </a-radio-group>
-          </a-form-item>
-        </a-col>
         <a-col :span="24">
           <a-form-item label='照片' v-bind="formItemLayout">
             <a-upload
