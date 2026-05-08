@@ -26,6 +26,14 @@ public interface IOrderInfoService extends IService<OrderInfo> {
     IPage<LinkedHashMap<String, Object>> selectOrderPage(Page<OrderInfo> page, OrderInfo orderInfo);
 
     /**
+     * 查询订单信息
+     *
+     * @param staffId 员工ID
+     * @return 结果
+     */
+    List<LinkedHashMap<String, Object>> queryOrderByStaff(Integer staffId);
+
+    /**
      * 新增订单信息
      *
      * @param orderInfo 订单信息

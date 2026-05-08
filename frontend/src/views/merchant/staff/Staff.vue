@@ -130,6 +130,10 @@ export default {
     columns () {
       return [{
         title: '员工姓名',
+        dataIndex: 'code',
+        ellipsis: true
+      }, {
+        title: '员工姓名',
         dataIndex: 'name',
         ellipsis: true
       }, {

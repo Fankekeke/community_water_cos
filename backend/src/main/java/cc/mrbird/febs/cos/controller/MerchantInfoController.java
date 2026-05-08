@@ -3,9 +3,14 @@ package cc.mrbird.febs.cos.controller;
 
 import cc.mrbird.febs.common.utils.R;
 import cc.mrbird.febs.cos.entity.MerchantInfo;
+import cc.mrbird.febs.cos.entity.StaffInfo;
+import cc.mrbird.febs.cos.entity.StaffLocalRecord;
 import cc.mrbird.febs.cos.entity.UserInfo;
 import cc.mrbird.febs.cos.service.IMerchantInfoService;
+import cc.mrbird.febs.cos.service.IStaffInfoService;
+import cc.mrbird.febs.cos.service.IStaffLocalRecordService;
 import cc.mrbird.febs.cos.service.IUserInfoService;
+import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
@@ -15,6 +20,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @author FanK
@@ -26,7 +32,12 @@ public class MerchantInfoController {
 
     private final IMerchantInfoService merchantInfoService;
 
+    private final IStaffInfoService staffInfoService;
+
     private final IUserInfoService userInfoService;
+
+    private final IStaffLocalRecordService staffLocalRecordService;
+
 
     /**
      * 分页获取商家信息

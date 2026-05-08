@@ -1,5 +1,6 @@
 package cc.mrbird.febs.cos.entity;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.io.Serializable;
 
@@ -72,5 +73,11 @@ public class StaffInfo implements Serializable {
 
     @TableField(exist = false)
     private Integer merchantId;
+
+    @TableField(exist = false)
+    private BigDecimal lat;
+
+    @TableField(exist = false)
+    private BigDecimal lng;
 
 }

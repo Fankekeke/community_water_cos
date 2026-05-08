@@ -101,7 +101,7 @@
             </div>
             <div v-if="nextFlag == 2" style="height: 100vh; overflow-y: auto;padding-left: 5px;overflow-x: hidden;color: #4a4a48;font-size: 12px;font-family: SimHei">
               <div style="font-size: 12px;font-family: SimHei;color: #404040;">
-                <div v-if="type == 1" id="areas" style="width: 100%;height: 350px;box-shadow: 3px 3px 3px rgba(0, 0, 0, .2);background:#ec9e3c;color:#fff;margin-bottom: 20px"></div>
+                <div v-if="type == 1" id="areas1" style="width: 100%;height: 350px;box-shadow: 3px 3px 3px rgba(0, 0, 0, .2);background:#ec9e3c;color:#fff;margin-bottom: 20px"></div>
                 <div style="margin-top: 25px">
                   <a-row style="padding-left: 24px;padding-right: 24px;font-size: 11px;font-family: SimHei">
                     <a-col style="margin-bottom: 15px"><span style="font-size: 15px;font-weight: 650;color: #000c17">购买信息</span></a-col>
@@ -357,7 +357,8 @@ export default {
     'type': function (value) {
       if (value.toString() === '1') {
         setTimeout(() => {
-          baiduMap.initMap('areas')
+          console.log(123)
+          baiduMap.initMap('areas1')
           this.getLocal()
         }, 200)
         this.addressId = null

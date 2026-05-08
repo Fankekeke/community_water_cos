@@ -57,7 +57,8 @@
         </a-col>
       </a-card>
     </a-row>
-    <home @setTitle="setTitleData" @setAdminTitle="setAdminTitle"></home>
+    <home v-if="user.roleId == 74 || user.roleId == 75" @setTitle="setTitleData" @setAdminTitle="setAdminTitle"></home>
+    <record v-if="user.roleId == 77" ></record>
     <a-row :gutter="8" class="count-info" style="margin-top: 15px" v-show="user.roleId == 74">
       <a-col :span="12" class="visit-count-wrapper">
         <a-card class="visit-count" hoverable>
@@ -73,11 +74,12 @@ import {mapState} from 'vuex'
 import moment from 'moment'
 import Home from './manage/component/home/Home'
 import Work from './manage/component/user/Work.vue'
+import Record from './manage/component/record/Record.vue'
 moment.locale('zh-cn')
 
 export default {
   name: 'HomePage',
-  components: {Work, Home, HeadInfo},
+  components: {Work, Home, Record, HeadInfo},
   data () {
     return {
       titleData: {
