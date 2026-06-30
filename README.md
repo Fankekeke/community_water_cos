@@ -1,18 +1,9 @@
-[
-
 ![](https://img.shields.io/badge/License-MIT-blue.svg)
-
-](LICENSE)
-[
 
 ![](https://img.shields.io/badge/Version-1.0.0-brightgreen.svg)
 
-]()
-[
-
 ![](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
 
-]()
 # 药店药品调配系统 (Pharmacy Drug Dispensing System)
 
 一套专为现代化连锁及单体药店设计的全链路数字化管理系统。本系统集成了**多角色权限管理、进销存一体化、电子处方流转、财务薪资结算**等核心业务模块，旨在帮助药店实现精细化运营，提升处方调配效率与库存周转率。
@@ -97,8 +88,6 @@ WebStorm OR VScode 编译器 [https://www.jianshu.com/p/d63b5bae9dff]
 
 ---
 
----
-
 ## 项目结构
 
 ```text
@@ -144,19 +133,20 @@ fank
 
 |  |  |
 |---------------------|---------------------|
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104177000.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104503080.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104136104.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104476523.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732103994145.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104462570.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732105031705.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104438732.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732105015491.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104427988.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104985203.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104405408.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104772141.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104393562.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104596981.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104379415.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104583080.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104367882.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104563023.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104289710.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104549613.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104207895.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104531699.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104191144.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/work/936e9baf53eb9a217af4f89c616dc19.png) |
+| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/0a434def-3738-466e-8f82-b2092cde0c39.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/199caebe-c7ec-431b-bdac-26f643b5fad5.png) |
+| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/e96504ec-7a4c-404f-af46-b3d0a957b3fa.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/93df1307-f85d-4bff-b8ee-86210dd766b4.png) |
+| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/ca0f79dd-3feb-42df-b404-5d22ef1db7a2.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/79c34183-cd3a-4945-a932-f4826892fcc5.png) |
+| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/c5f55665-e349-44b4-af82-52173a2aea44.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/36e7671c-8089-45db-ac8e-191513a6265d.png) |
+| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/c2c0e9f8-13f9-41bb-a83a-d498d422f226.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/28fc6704-c8d6-4121-af4f-c57bd2b0525a.png) |
+| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/ba905605-3956-43c9-bd1c-418012a1c533.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/19d5c93b-7190-423d-83d0-b5b3a22d1906.png) |
+| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/b68046a2-0d95-4dc7-a11b-d495ff39af90.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/010bd7ec-86a1-4a76-ab70-7bc379d84493.png) |
+| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/a8bba953-3994-41b1-b762-c3db8ad61387.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/8c37d64d-e729-4d09-9548-4bfab331a894.png) |
+| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/49260112-d9f5-4f61-9dd1-d24f198915ad.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/6ab683ed-2544-471a-a526-ca2c96e892bc.png) |
+| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/6186a2b8-d76e-405b-b3d5-bb44f7d1bd6e.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/4d3cc96b-84e6-450d-98c0-8d24ab6a65a0.png) |
+| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/519a5e02-03ef-48cd-89a6-858ef60a6b8c.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/3fbfba72-2298-4d3c-9904-cd150be5c425.png) |
+| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/471be86f-9fd7-4d59-a49a-44ed40e03c94.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/2bfd9cc2-ea57-4032-b45f-a9880f2b2ce2.png) |
+| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/309cd591-11b5-48e9-922b-4e730548e943.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/0df655e6-a5f2-4110-8751-4b90a48d2f09.png) |
+| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/282db690-6b37-4415-8b4e-97956828e1a5.png) |  |
 
 #### 演示视频
 
