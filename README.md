@@ -1,30 +1,31 @@
-![](https://img.shields.io/badge/License-MIT-blue.svg)
+### 基于SpringBoot + Vue的药店药品调配系统.
 
-![](https://img.shields.io/badge/Version-1.0.0-brightgreen.svg)
+桶装水社区配送系统、智能饮水服务平台、小区净水配送平台、桶装水订水小程序、社区直饮水配送管理系统
 
-![](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
+#### 管理员功能模块介绍：
+###### 用户收货地址：管理社区用户配送桶装水的常用收货地址信息。公告管理：发布停水通知、促销活动或平台重要公告。商品管理：维护桶装水品牌、规格、价格等商品信息。商品类型：分类管理商品，如纯净水、矿泉水、大桶/小桶等。订单评价：查看并审核用户对水质、配送服务的评分与留言。积分兑换：配置积分可兑换商品（如免费水票、滤芯等）。物品积分：设定购买不同商品或复购行为对应的积分奖励。会员积分：管理用户积分账户，支持查询、增减与清零操作。商家管理：审核和监管入驻水站或供应商的资质与服务。商家会员：管理商家关联的会员体系及专属优惠策略。订单管理：监控所有桶装水订单状态、配送进度及异常处理。员工管理：管理平台及水站配送、客服等岗位人员账号权限。用户管理：维护用户资料，处理违规账号或投诉问题。帖子审核：审核社区论坛中用户发布的饮水健康、服务反馈等内容。数据统计：分析订单量、复购率、热门品牌、用户活跃度等运营数据。
 
-# 药店药品调配系统 (Pharmacy Drug Dispensing System)
+#### 商家功能模块介绍：
+###### 数据统计：查看本水站销量、配送完成率、用户评价等经营数据。商品管理：上架或调整本店桶装水品类、库存及价格信息。订单评价：查阅用户对本店水质、送水时效等服务的反馈。订单管理：处理接单、安排配送、标记完成或处理退换请求。员工管理：管理本店送水工、客服等员工账号与任务分配。商家会员：设置老客户折扣、月订套餐等会员专属权益。商家信息管理：维护水站名称、联系方式、服务区域等基本信息。
 
-一套专为现代化连锁及单体药店设计的全链路数字化管理系统。本系统集成了**多角色权限管理、进销存一体化、电子处方流转、财务薪资结算**等核心业务模块，旨在帮助药店实现精细化运营，提升处方调配效率与库存周转率。
-
+#### 用户功能模块介绍：
+###### 用户注册：通过手机号快速注册成为平台订水用户。个人信息修改：更新姓名、联系电话、楼层等个人资料。收货地址：添加或编辑家庭/办公地址，支持多地址管理。订单下单：选择桶装水品牌、数量及配送时间提交订单。订单评价：对本次送水服务、水质口感进行打分与评论。商品收藏：收藏常购水品，方便下次一键下单。帖子发布与评论：在社区分享饮水体验、净水知识或互动交流。论坛发帖：发起关于健康饮水、水桶回收等话题讨论。支付为支付宝沙盒支付：使用支付宝沙箱环境完成模拟在线支付测试。
 
 #### 安装环境
-**️ 注意**：请确保您的开发环境已安装以下依赖。
 
 JAVA 环境 
 
-Node.js环境 [https://nodejs.org/en/] 选择14.17
+Node.js环境 [https://nodejs.org/en/] 选择14 - 22
 
 Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs
 
-Mysql 数据库 [https://blog.csdn.net/qq_40303031/article/details/88935262] 一定要把账户和密码记住
+Mysql 数据库 一定要把账户和密码记住
 
 redis
 
-Idea 编译器 [https://blog.csdn.net/weixin_44505194/article/details/104452880]
+Idea 编译器
 
-WebStorm OR VScode 编译器 [https://www.jianshu.com/p/d63b5bae9dff]
+WebStorm OR VScode 编译器
 
 #### 采用技术及功能
 
@@ -37,79 +38,14 @@ WebStorm OR VScode 编译器 [https://www.jianshu.com/p/d63b5bae9dff]
 
 开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok
 
----
+##### 管理员： 
+用户收货地址，公告管理，商品管理，商品类型，订单评价，积分兑换，物品积分，会员积分，商家管理，商家会员，订单管理，员工管理，用户管理，帖子审核，数据统计
 
-## 核心特性
+##### 商家： 
+数据统计，商品管理，订单评价，订单管理，员工管理，商家会员，商家信息管理
 
-- **多门店/多角色协同**：完美支持 管理员、药店、员工、用户 四大角色，数据权限严格隔离。
-- **全生命周期药品管理**：涵盖采购、入库、库存调配、预警及出库全流程。
-- **电子处方流转**：支持在线处方审核、调配记录与追溯，保障用药安全。
-- **多维度数据看板**：提供销售排行、库存统计、员工绩效等可视化报表。
-- **业财一体化**：打通在线支付、缴费记录与员工薪资发放链路。
-
----
-
-## ️ 功能模块概览
-
-### ️ 管理员
-
-全局统筹与底层数据维护，掌控系统运行命脉。
-
-- **数据看板**：首页订单看板、销售统计、销售排行
-- **组织与人事**：员工管理、职位变动、薪资发放、用户/管理员管理
-- **药品与库存**：药品管理、电子处方、库存统计、库房预警、药店库存、库存调整/调配
-- **订单与财务**：订单管理/详情、订单评价、配送信息、缴费记录
-- **供应链**：供应商管理、药品采购、采购物流、药店管理、公告管理
-
-### 药店
-
-门店日常运营与人员调度中心。
-
-- **门店看板**：商家订单看板
-- **人员管理**：员工管理、岗位调整、员工薪资、员工留言
-- **业务处理**：订单管理/详情、电子处方
-- **库存流转**：药店库存、库存调整、出入库详情、药店信息
-
-### 员工
-
-一线销售与调配人员的高效工作台。
-
-- **个人看板**：员工销售看板
-- **业务执行**：药品记录、电子处方处理、订单管理
-- **个人事务**：我的信息、我的薪资、我的留言
-
-### 用户
-
-便捷的 C 端购药与健康管理入口。
-
-- **购药体验**：药品购买、在线支付、药品处方查看
-- **订单服务**：我的订单、订单评价、缴费记录
-- **个人设置**：个人信息管理
-
----
-
-## 项目结构
-
-```text
-pharmacy-dispensing-system/
-├── backend/            # 后端 API 服务
-│   ├── src/
-│   │   ├── controllers/  # 控制器
-│   │   ├── models/       # 数据模型
-│   │   ├── routes/       # 路由
-│   │   └── services/     # 业务逻辑
-│   └── package.json
-├── frontend/           # 前端 Web 应用
-│   ├── src/
-│   │   ├── views/      # 页面视图
-│   │   ├── components/ # 公共组件
-│   │   └── store/      # 状态管理
-│   └── package.json
-├── docs/               # 项目文档与 API 接口说明
-├── LICENSE
-└── README.md
-```
----
+##### 用户：
+用户注册，个人信息修改，收货地址，订单下单，订单评价，商品收藏，帖子发布与评论，论坛发帖，支付为支付宝沙盒支付
 
 
 #### 前台启动方式
@@ -121,7 +57,7 @@ pharmacy-dispensing-system/
 admin
 1234qwer
 
-[商家管理员]
+[商家]
 shangjia
 1234qwer
 
@@ -133,20 +69,19 @@ fank
 
 |  |  |
 |---------------------|---------------------|
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/0a434def-3738-466e-8f82-b2092cde0c39.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/199caebe-c7ec-431b-bdac-26f643b5fad5.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/e96504ec-7a4c-404f-af46-b3d0a957b3fa.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/93df1307-f85d-4bff-b8ee-86210dd766b4.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/ca0f79dd-3feb-42df-b404-5d22ef1db7a2.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/79c34183-cd3a-4945-a932-f4826892fcc5.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/c5f55665-e349-44b4-af82-52173a2aea44.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/36e7671c-8089-45db-ac8e-191513a6265d.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/c2c0e9f8-13f9-41bb-a83a-d498d422f226.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/28fc6704-c8d6-4121-af4f-c57bd2b0525a.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/ba905605-3956-43c9-bd1c-418012a1c533.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/19d5c93b-7190-423d-83d0-b5b3a22d1906.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/b68046a2-0d95-4dc7-a11b-d495ff39af90.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/010bd7ec-86a1-4a76-ab70-7bc379d84493.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/a8bba953-3994-41b1-b762-c3db8ad61387.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/8c37d64d-e729-4d09-9548-4bfab331a894.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/49260112-d9f5-4f61-9dd1-d24f198915ad.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/6ab683ed-2544-471a-a526-ca2c96e892bc.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/6186a2b8-d76e-405b-b3d5-bb44f7d1bd6e.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/4d3cc96b-84e6-450d-98c0-8d24ab6a65a0.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/519a5e02-03ef-48cd-89a6-858ef60a6b8c.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/3fbfba72-2298-4d3c-9904-cd150be5c425.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/471be86f-9fd7-4d59-a49a-44ed40e03c94.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/2bfd9cc2-ea57-4032-b45f-a9880f2b2ce2.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/309cd591-11b5-48e9-922b-4e730548e943.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/0df655e6-a5f2-4110-8751-4b90a48d2f09.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/282db690-6b37-4415-8b4e-97956828e1a5.png) |  |
+| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104177000.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104503080.png) |
+| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104136104.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104476523.png) |
+| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732103994145.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104462570.png) |
+| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732105031705.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104438732.png) |
+| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732105015491.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104427988.png) |
+| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104985203.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104405408.png) |
+| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104772141.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104393562.png) |
+| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104596981.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104379415.png) |
+| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104583080.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104367882.png) |
+| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104563023.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104289710.png) |
+| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104549613.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104207895.png) |
+| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104531699.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1732104191144.png) |
+| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/work/936e9baf53eb9a217af4f89c616dc19.png) |
 
 #### 演示视频
 
@@ -165,6 +100,7 @@ WeChat: `Storm_Berserker`
 > 项目部署调试不好包退！功能逻辑没讲明白包退！
 
 #### 其它资源
+[2026年-答辩顺利通过-客户评价🀄](https://berserker287.github.io/2026/06/29/2026%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/)
 
 [2025年-答辩顺利通过-客户评价🍜](https://berserker287.github.io/2025/06/18/2025%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/)
 
